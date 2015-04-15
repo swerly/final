@@ -1,10 +1,12 @@
 #ifndef ROBOT_H
 #define	ROBOT_H
 
-void forward(void);
-void turnLeft(void);
-void turnRight(void);
-void turn180(void);
+void fwd(void);
+void softLeft(void);
+void softRight(void);
+void hardLeft(void);
+void hardRight(void);
+void t180(void);
 void stop(void);
 
 #endif

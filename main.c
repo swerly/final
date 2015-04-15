@@ -36,22 +36,22 @@ int main(void){
                  break;
 
              case forward:
-                 forward();
+                 fwd();
                  curState = getState;
                  break;
 
              case turnLeft:
-                 turnLeft();
+                 softLeft();
                  curState = getState;
                  break;
 
              case turnRight:
-                 turnRight();
+                 softRight();
                  curState = getState;
                  break;
 
              case turn180:
-                 turn180();
+                 t180();
                  curState = getState;
                  break;
 

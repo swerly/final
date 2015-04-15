@@ -2,18 +2,26 @@
 #include "robot.h"
 #include "pwm.h"
 
-void forward(void){
+void fwd(void){
     setDutyCycle(BOTH, 100);
 }
-void turnLeft(void){
+void softLeft(void){
     setDutyCycle(MOTOR_ONE, 100);
     setDutyCycle(MOTOR_TWO, 0);
 }
-void turnRight(void){
+void softRight(void){
     setDutyCycle(MOTOR_ONE, 0);
     setDutyCycle(MOTOR_TWO, 100);
 }
-void turn180(void){
+void hardLeft(void){
+    setDutyCycle(MOTOR_ONE, 100);
+    setDutyCycle(MOTOR_TWO, 0);
+}
+void hardRight(void){
+    setDutyCycle(MOTOR_ONE, 0);
+    setDutyCycle(MOTOR_TWO, 100);
+}
+void t180(void){
     setDirection(MOTOR_ONE, REVERSE);
     setDutyCycle(MOTOR_ONE, 100);
     setDutyCycle(MOTOR_TWO, 100);
