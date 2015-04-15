@@ -7,10 +7,10 @@ void fwd(void){
 }
 void softLeft(void){
     setDutyCycle(MOTOR_ONE, 100);
-    setDutyCycle(MOTOR_TWO, 0);
+    setDutyCycle(MOTOR_TWO, 75);
 }
 void softRight(void){
-    setDutyCycle(MOTOR_ONE, 0);
+    setDutyCycle(MOTOR_ONE, 75);
     setDutyCycle(MOTOR_TWO, 100);
 }
 void hardLeft(void){
