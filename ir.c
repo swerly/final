@@ -61,10 +61,12 @@ stateType checkSensorValues(void){
     //need to start sampling so we can read adc vals
     AD1CON1bits.SAMP = 1;
     while (!AD1CON1bits.DONE); //wait until conversion is done
-    leftRead = ADC1BUF0; //put respective values in their place
-    rightRead = ADC1BUF1;
-    midRead = ADC1BUF2;
-
+    
+    //put respective values in their place
+    //an10 -> an11 -> an12 fill buffer in that order
+    rightRead = ADC1BUF0;
+    midRead = ADC1BUF1;
+    leftRead = ADC1BUF2;
     //if our input is reading logic high, then no light is getting into the
     //phototransistor which means its sensing the line
     if (leftRead > MID_VOLTAGE_VAL) leftIR = LINE;
