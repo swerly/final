@@ -18,6 +18,25 @@ volatile stateType curState, next;
 
 
 int main(void){
+    initIR();
+    int leftRead, rightRead, midRead, i;
+
+    while(1){
+        //need to start sampling so we can read adc vals
+        AD1CON1bits.SAMP = 1;
+        while (!AD1CON1bits.DONE); //wait until conversion is done
+
+        //put respective values in their place
+        //an10 -> an11 -> an12 fill buffer in that order
+        rightRead = ADC1BUF0;
+        midRead = ADC1BUF1;
+        leftRead = ADC1BUF2;
+
+        //delay and debug to see if sensor vals are what they should be
+        for(i = 0; i < 1000; i++) delayUs(1000);
+    }
+
+    /*
     initMotorOnePWM();
     initMotorTwoPWM();
     initIR();
@@ -66,6 +85,7 @@ int main(void){
                  break;
          }
     }
+    */
 }
 
 void _ISR _CNInterrupt(){

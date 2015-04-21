@@ -67,12 +67,15 @@ stateType checkSensorValues(void){
     rightRead = ADC1BUF0;
     midRead = ADC1BUF1;
     leftRead = ADC1BUF2;
+
     //if our input is reading logic high, then no light is getting into the
     //phototransistor which means its sensing the line
     if (leftRead > MID_VOLTAGE_VAL) leftIR = LINE;
+
     //else our comparator circuit is outputting "logic low" which means we
     //are getting a reflection so we are sensing the floor
     else leftIR = FLOOR;
+
     if (rightRead > MID_VOLTAGE_VAL) rightIR = LINE;
     else rightIR = FLOOR;
     if (midRead > MID_VOLTAGE_VAL) rightIR = LINE;
