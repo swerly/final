@@ -32,8 +32,8 @@ int main(void){
         midRead = ADC1BUF1;
         leftRead = ADC1BUF2;
 
-        //delay and debug to see if sensor vals are what they should be
-        for(i = 0; i < 1000; i++) delayUs(1000);
+        //delay 10s and debug to see if sensor vals are what they should be
+        for(i = 0; i < 10000; i++) delayUs(1000);
     }
 
     /*
