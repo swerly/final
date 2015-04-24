@@ -116,3 +116,30 @@ void setDirection(int motor, int dir){
     delayUs(5); //delay so pins have time to change
 }
 
+void testPWM(){
+    int i = 0;
+    setDirection(MOTOR_ONE, REVERSE);
+    setDirection(MOTOR_TWO, FORWARD);
+    setDutyCycle(MOTOR_ONE, 0);
+    setDutyCycle(MOTOR_TWO, 100);
+    for(i = 0; i<1000; i++) delayUs(2000);
+    setDutyCycle(MOTOR_ONE, 75);
+    setDutyCycle(MOTOR_TWO, 0);
+    for(i = 0; i<1000; i++) delayUs(2000);
+    setDutyCycle(MOTOR_ONE, 100);
+    setDutyCycle(MOTOR_TWO, 0);
+    for(i = 0; i<1000; i++) delayUs(2000);
+
+    setDirection(MOTOR_ONE, REVERSE);
+    setDirection(MOTOR_TWO, REVERSE);
+    setDutyCycle(MOTOR_ONE, 50);
+    setDutyCycle(MOTOR_TWO, 50);
+    for(i = 0; i<1000; i++) delayUs(2000);
+    setDutyCycle(MOTOR_ONE, 75);
+    setDutyCycle(MOTOR_TWO, 75);
+    for(i = 0; i<1000; i++) delayUs(2000);
+    setDutyCycle(MOTOR_ONE, 100);
+    setDutyCycle(MOTOR_TWO, 100);
+    for(i = 0; i<1000; i++) delayUs(2000);
+
+}

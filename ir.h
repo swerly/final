@@ -10,7 +10,7 @@
 
 //i put this here so i could use stateType as a return type
 typedef enum stateTypeEnum{
-    idle, getState, turnLeft, turnRight, forward, turn180,
+    idle, getState, turnLeft, turnRight, forward, turn180, ignoreRight,
     debouncePress, debounceRelease
 }stateType;
 
@@ -20,7 +20,7 @@ void initIR(void);
 //check the values on the photoresistor pins to see which direction we need to
 //go to follow the line.
 //returns stateType
-stateType checkSensorValues(void);
+stateType checkSensorValues(unsigned int left, unsigned int right, unsigned int center);
 
 
 #endif	/* IR_H */
